@@ -7,7 +7,7 @@ from datetime import datetime
 import openai
 
 #Placer votre clé API dans la variable ci-dessous
-openai.api_key = "API_Keys"
+openai.api_key = st.secrets["openai_api_key"]
 
 # Requête HTTP
 url = 'https://www.leagueoflegends.com/fr-fr/champions/'
