@@ -4,15 +4,13 @@ st.set_page_config(page_title="Leag of Legends Dashboard",
                      page_icon="https://freepngimg.com/save/85643-blue-league-legends-icons-of-symbol-garena/1600x1600",
                      layout="wide")
 
-show_sidebar()
+streamlit_lol.show_sidebar()
+st.title("Historique des Champions")
 
 database = DataBase('database_lol')
-
-st.title("Historique des Champions")
-#st.video("https://www.leagueoflegends.com/static/hero-c35bd03ceaa5f919e98b20c905044a3d.webm", start_time=0, format='video/webm')
-
 df = pd.DataFrame(database.select_table('champions'))
 
+# Show data
 if st.checkbox("Afficher l'historique des champions en fonction de la date de collecte"):
     date = st.selectbox('Choisir la date de collecte', df['time'].unique())
     st.write(df[df.time == date])
@@ -44,7 +42,7 @@ if prompt := st.chat_input("Posez-moi votre question sur les champions de League
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    response = chat_openAI(prompt, database)
+    response = streamlit_lol.chat_openAI(prompt, database)
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)

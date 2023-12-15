@@ -4,3 +4,5 @@ backgroundColor="#000000"
 secondaryBackgroundColor="#111111"
 textColor="#FFFFFF"
 font="Serif"
+
+openai_api_key = "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"
