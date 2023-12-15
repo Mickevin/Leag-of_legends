@@ -1,6 +1,5 @@
-Bien sûr! Voici un exemple de fichier README en markdown pour votre projet :
 
-```markdown
+
 # League of Legends Streamlit App
 
 ## Description
@@ -11,9 +10,9 @@ This Streamlit application collects data from the League of Legends website and 
 
 1. Clone the repository:
 
-   `bash https://github.com/Mickevin/League-of_legends.git`
-```
-
+   ```
+   bash https://github.com/Mickevin/League-of_legends.git
+   ```
 2. Install the required dependencies:
 
    ```bash
