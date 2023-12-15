@@ -20,8 +20,18 @@ if st.checkbox("Afficher l'historique des champions en fonction du rôle"):
     st.write(df[df.role.apply(lambda x: x in role)])
 
 if st.checkbox("Afficher l'historique des champions en fonction du nom"):
-    name = st.selectbox('Choisir le nom', df['id_champion'].unique())
-    st.write(df[df.id_champion == name])
+    name = st.multiselect('Choisir le nom', df['id_champion'].unique())
+    df_champion = df[df.id_champion.apply(lambda x: x in name)]
+
+    for i in range(len(df_champion)):
+        col1, col2 = st.columns(2)
+        with col1:
+            st.title(df_champion.iloc[i]['id_champion'])
+            st.write('Rôle : ' + df_champion.iloc[i]['role'])
+            st.write(df_champion.iloc[i]['desciption'])
+            
+        with col2:
+            st.image(df_champion.iloc[i]['img'])
 
 
 st.title("League of Legends Bot !")
