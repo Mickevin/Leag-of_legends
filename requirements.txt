@@ -1,6 +1,6 @@
 streamlit
 pandas
-sqlalchemy
+sqlalchemy==1.4.40
 openai
 bs4
 requests
