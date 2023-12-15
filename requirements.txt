@@ -1,0 +1,6 @@
+streamlit
+pandas
+sqlalchemy
+openai
+bs4
+requests
