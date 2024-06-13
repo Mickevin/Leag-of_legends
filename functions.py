@@ -33,7 +33,7 @@ class StraemliSwhow():
 
     def get_champion_info(self, champion):
                 name = champion.find('span').text
-                img = champion.find('img').get('src')
+                
                 
                 champion_link = self.url + champion.get('href').split('/')[-2]
                 
@@ -41,6 +41,7 @@ class StraemliSwhow():
                 soup_champion = BeautifulSoup(response_champion.text, "html.parser")
                 desciption = soup_champion.find('div', 'sc-4225abdc-0 lnNUuw').text
                 role = soup_champion.find('div', 'character-meta-box').text
+                img = soup_champion.find('div', 'sc-cf6885cf-0 dfGzkK media-viewport').find('img').get('src')
 
                 return name, img, desciption, role, champion_link
     
